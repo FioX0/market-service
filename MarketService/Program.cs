@@ -53,11 +53,11 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-// Add services to the container.
+        // Add services to the container.
         services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen();
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        //services.AddEndpointsApiExplorer();
+        //services.AddSwaggerGen();
         services.Configure<RpcConfigOptions>(
             Configuration.GetSection(RpcConfigOptions.RpcConfig));
         services.Configure<WorkerOptions>(
@@ -106,17 +106,17 @@ public class Startup
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-// Configure the HTTP request pipeline.h
-        if (env.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
-        app.UseRouting();
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers();
-            endpoints.MapHealthChecks("/ping");
-        });
+        // Configure the HTTP request pipeline.h
+        //if (env.IsDevelopment())
+        //{
+        //    app.UseSwagger();
+        //    app.UseSwaggerUI();
+       //}
+        //app.UseRouting();
+       // app.UseEndpoints(endpoints =>
+        //{
+        //    endpoints.MapControllers();
+        //    endpoints.MapHealthChecks("/ping");
+        //});
     }
 }
